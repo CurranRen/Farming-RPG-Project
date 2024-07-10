@@ -1,9 +1,11 @@
-﻿public enum ToolEffect
+﻿// 工具效果枚举
+public enum ToolEffect
 {
     none,
     watering
 }
 
+// 玩家面朝方向枚举
 public enum Direction
 {
     up,
@@ -11,4 +13,21 @@ public enum Direction
     left,
     right,
     none
+}
+
+// 物品类型枚举
+public enum ItemType
+{
+    Seed,
+    Commodity,
+    Watering_tool,
+    Hoeing_tool,
+    Chopping_tool,
+    Breaking_tool,
+    Reaping_tool,
+    Collecting_tool,
+    Reapable_scenary,
+    Furniture,
+    none,
+    count
 }
