@@ -9,9 +9,10 @@ public class InventoryManager : SingletonMonobehaviour<InventoryManager>
     // 从脚本化对象中获取的物品列表，使用SerializeField使其在Unity编辑器中可见
     [SerializeField] private SO_ItemList itemList = null;
 
-    private void Start()
+    protected override void Awake()
     {
-        // 创建物品详细信息字典
+        base.Awake();
+
         CreateItemDetailsDictionary();
     }
 

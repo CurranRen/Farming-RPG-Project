@@ -1,4 +1,6 @@
-﻿// 工具效果枚举
+﻿
+
+// 工具效果枚举
 public enum ToolEffect
 {
     none,
