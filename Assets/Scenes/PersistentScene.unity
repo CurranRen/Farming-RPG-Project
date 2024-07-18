@@ -472,6 +472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4eddbcc1ae700469b9f86d570cd7a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryListCapacityIntArray: 
   itemList: {fileID: 11400000, guid: 733fbaa8772bd64419a4c87905d2be04, type: 2}
 --- !u!4 &1593486809
 Transform:

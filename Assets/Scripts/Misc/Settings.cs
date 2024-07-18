@@ -10,7 +10,11 @@ public class Settings : MonoBehaviour
     // 玩家移动
     public const float runningSpeed = 5.333f;
     public const float walkingSpeed = 2.666f;
-    
+
+    // 玩家库存容量
+    public static int playerInitialInventoryCapacity = 24;
+    public static int playerMaximumInventoryCapacity = 48;
+
     // 玩家动画参数
     public static int xInput;
     public static int yInput;

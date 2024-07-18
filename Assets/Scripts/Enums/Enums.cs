@@ -1,4 +1,10 @@
-﻿
+﻿// 库存位置枚举
+public enum InventoryLocation
+{
+    player,
+    chest,
+    count
+}
 
 // 工具效果枚举
 public enum ToolEffect
