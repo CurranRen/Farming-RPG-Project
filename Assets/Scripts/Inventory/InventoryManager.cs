@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-// InventoryManager 类，继承自 SingletonMonobehaviour
 public class InventoryManager : SingletonMonobehaviour<InventoryManager>
 {
     // 存储物品详情的字典，键为物品代码，值为物品详情
@@ -10,7 +9,7 @@ public class InventoryManager : SingletonMonobehaviour<InventoryManager>
     // 各个库存列表的数组
     public List<InventoryItem>[] inventoryLists;
 
-    // 库存列表容量数组，数组的索引是库存列表的编号（来自 InventoryLocation 枚举），值是该库存列表的容量
+    // 库存列表容量数组
     [HideInInspector] public int[] inventoryListCapacityIntArray;
 
     // 可序列化的物品列表脚本对象
@@ -63,7 +62,7 @@ public class InventoryManager : SingletonMonobehaviour<InventoryManager>
     }
 
     /// <summary>
-    /// 将物品添加到指定位置的库存列表中，然后销毁 gameObjectToDelete
+    /// 将物品添加到指定位置的库存列表中，然后销毁
     /// </summary>
     public void AddItem(InventoryLocation inventoryLocation, Item item, GameObject gameObjectToDelete)
     {
@@ -112,8 +111,8 @@ public class InventoryManager : SingletonMonobehaviour<InventoryManager>
         inventoryItem.itemQuantity = 1;
         inventoryList.Add(inventoryItem);
 
-        // 调试打印库存列表
-        DebugPrintInventoryList(inventoryList);
+        //// 调试打印库存列表
+        //DebugPrintInventoryList(inventoryList);
     }
 
     /// <summary>
@@ -129,8 +128,8 @@ public class InventoryManager : SingletonMonobehaviour<InventoryManager>
         inventoryItem.itemCode = itemCode;
         inventoryList[position] = inventoryItem;
 
-        // 调试打印库存列表
-        DebugPrintInventoryList(inventoryList);
+        //// 调试打印库存列表
+        //DebugPrintInventoryList(inventoryList);
     }
 
     /// <summary>
@@ -154,7 +153,7 @@ public class InventoryManager : SingletonMonobehaviour<InventoryManager>
     }
 
     /// <summary>
-    /// 返回 itemCode 对应的物品详情（从 SO_ItemList 中获取），如果物品代码不存在则返回 null
+    /// 返回 itemCode 对应的物品详情，如果物品代码不存在则返回 null
     /// </summary>
     public ItemDetails GetItemDetails(int itemCode)
     {
@@ -171,16 +170,16 @@ public class InventoryManager : SingletonMonobehaviour<InventoryManager>
         }
     }
 
-    /// <summary>
-    /// 调试打印库存列表
-    /// </summary>
-    private void DebugPrintInventoryList(List<InventoryItem> inventoryList)
-    {
-        // 遍历库存列表，打印每个物品的描述和数量
-        foreach (InventoryItem inventoryItem in inventoryList)
-        {
-            Debug.Log("Item Description:" + InventoryManager.Instance.GetItemDetails(inventoryItem.itemCode).itemDescription + "    Item Quantity: " + inventoryItem.itemQuantity);
-        }
-        Debug.Log("******************************************************************************");
-    }
+    ///// <summary>
+    ///// 调试打印库存列表
+    ///// </summary>
+    //private void DebugPrintInventoryList(List<InventoryItem> inventoryList)
+    //{
+    //    // 遍历库存列表，打印每个物品的描述和数量
+    //    foreach (InventoryItem inventoryItem in inventoryList)
+    //    {
+    //        Debug.Log("Item Description:" + InventoryManager.Instance.GetItemDetails(inventoryItem.itemCode).itemDescription + "    Item Quantity: " + inventoryItem.itemQuantity);
+    //    }
+    //    Debug.Log("******************************************************************************");
+    //}
 }
