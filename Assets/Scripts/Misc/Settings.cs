@@ -1,17 +1,36 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 
-public class Settings : MonoBehaviour
+public static class Settings 
 {
-    // 遮挡物体的淡入淡出透明化 - ObscuringItemFader
+    // Obscuring Item Fading - ObscuringItemFader
     public const float fadeInSeconds = 0.25f;
     public const float fadeOutSeconds = 0.35f;
     public const float targetAlpha = 0.45f;
 
-    // 玩家移动
+    // Tilemap
+    public const float gridCellSize = 1f; // grid cell size in unity units
+    public static Vector2 cursorSize = Vector2.one;
+
+    // Player
+    public static float playerCentreYOffset = 0.875f;
+
+
+    // Player Movement
     public const float runningSpeed = 5.333f;
     public const float walkingSpeed = 2.666f;
-    
-    // 玩家动画参数
+    public static float useToolAnimationPause = 0.25f;
+    public static float liftToolAnimationPause = 0.4f;
+    public static float pickAnimationPause = 1f;
+    public static float afterUseToolAnimationPause = 0.2f;
+    public static float afterLiftToolAnimationPause = 0.4f;
+    public static float afterPickAnimationPause = 0.2f;
+
+    // Inventory
+    public static int playerInitialInventoryCapacity = 24;
+    public static int playerMaximumInventoryCapacity = 48;
+
+        // Player Animation Parameters
     public static int xInput;
     public static int yInput;
     public static int isWalking;
@@ -34,16 +53,33 @@ public class Settings : MonoBehaviour
     public static int isPickingUp;
     public static int isPickingDown;
 
-    // 共享的角色动画参数
+    // Shared Animation Parameters
     public static int idleUp;
     public static int idleDown;
     public static int idleLeft;
     public static int idleRight;
 
-    // 静态构造函数，将动画参数的字符串名称转换为哈希值
+    //Tools
+    public const string HoeingTool = "Hoe";
+    public const string ChoppingTool = "Axe";
+    public const string BreakingTool = "Pickaxe";
+    public const string ReapingTool = "Scythe";
+    public const string WateringTool = "Watering Can";
+    public const string CollectingTool = "Basket";
+
+    // Reaping
+    public const int maxCollidersToTestPerReapSwing = 15;
+    public const int maxTargetComponentsToDestroyPerReapSwing = 2;
+
+
+    // Time System
+    public const float secondsPerGameSecond = 0.012f;
+
+
+    // static constructor
     static Settings()
     {
-        // 玩家动画参数转换
+        // Player Animation Parameters
         xInput = Animator.StringToHash("xInput");
         yInput = Animator.StringToHash("yInput");
         isWalking = Animator.StringToHash("isWalking");
@@ -66,7 +102,7 @@ public class Settings : MonoBehaviour
         isPickingUp = Animator.StringToHash("isPickingUp");
         isPickingDown = Animator.StringToHash("isPickingDown");
 
-        // 共享的角色动画参数转换
+        // Shared Animation parameters
         idleUp = Animator.StringToHash("idleUp");
         idleDown = Animator.StringToHash("idleDown");
         idleLeft = Animator.StringToHash("idleLeft");

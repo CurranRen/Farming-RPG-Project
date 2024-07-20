@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿
+using UnityEngine;
 
 public class MovementAnimationParameterControl : MonoBehaviour
 {
     private Animator animator;
 
-    // 用于初始化
+    // Use this for initialisation
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -79,8 +81,6 @@ public class MovementAnimationParameterControl : MonoBehaviour
         if (idleRight)
             animator.SetTrigger(Settings.idleRight);
     }
-
-
 
     private void AnimationEventPlayFootstepSound()
     {
